@@ -1,0 +1,5571 @@
+{
+  "x-generator": "NSwag v13.15.5.0 (NJsonSchema v10.6.6.0 (Newtonsoft.Json v13.0.0.0))",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "MOJ.CRM.Internal.API",
+    "description": "MOJ.CRM.Internal.API",
+    "termsOfService": "None",
+    "contact": {
+      "name": "CX Team",
+      "url": "",
+      "email": "CXSupport@moj.gov.sa"
+    },
+    "license": {
+      "name": "CX MOJ",
+      "url": "moj"
+    },
+    "version": "1.2"
+  },
+  "servers": [
+    {
+      "url": "http://10.162.2.148:8887/",
+      "description": "Prod"
+    },
+    {
+      "url": "http://10.162.2.148:8887/",
+      "description": "StageURL"
+    }
+  ],
+  "paths": {
+    "/api/attachmentsAndNotes/createAttachmentsAndNotes": {
+      "post": {
+        "tags": [
+          "AttachmentsAndNotes"
+        ],
+        "operationId": "AttachmentsAndNotes_CreateAttachmentsAndNotes",
+        "requestBody": {
+          "x-name": "Note",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTONote"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOCreateNoteAttachmenResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/attachmentsAndNotes/getObjectNotes": {
+      "post": {
+        "tags": [
+          "AttachmentsAndNotes"
+        ],
+        "operationId": "AttachmentsAndNotes_GetObjectNotes",
+        "requestBody": {
+          "x-name": "Payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOGetObjectNotesPayload"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOGetObjectNotesResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/attachmentsAndNotes/getPrivateObjectNotes": {
+      "post": {
+        "tags": [
+          "AttachmentsAndNotes"
+        ],
+        "operationId": "AttachmentsAndNotes_GetPrivateObjectNotes",
+        "requestBody": {
+          "x-name": "Payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOPrivateObjectNotesPayload"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOPrivatNotesResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/attachmentsAndNotes/GetAttachment": {
+      "post": {
+        "tags": [
+          "AttachmentsAndNotes"
+        ],
+        "operationId": "AttachmentsAndNotes_GetAttachment",
+        "requestBody": {
+          "x-name": "Payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTONoteAttachmentPayload"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTONoteAttachmentPayload"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cacheManager/getCacheObject": {
+      "post": {
+        "tags": [
+          "CacheManager"
+        ],
+        "operationId": "CacheManager_GetCacheObjectAction",
+        "requestBody": {
+          "x-name": "CacheKey",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cacheManager/getAllCacheObjects": {
+      "post": {
+        "tags": [
+          "CacheManager"
+        ],
+        "operationId": "CacheManager_GetAllCacheObjectsAction",
+        "responses": {
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cacheManager/clearCache": {
+      "post": {
+        "tags": [
+          "CacheManager"
+        ],
+        "operationId": "CacheManager_ClearCacheAction",
+        "responses": {
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cacheManager/removeCacheObject": {
+      "post": {
+        "tags": [
+          "CacheManager"
+        ],
+        "operationId": "CacheManager_RemoveCacheObjectAction",
+        "requestBody": {
+          "x-name": "CacheKey",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cacheManager/getCacheKeys": {
+      "post": {
+        "tags": [
+          "CacheManager"
+        ],
+        "operationId": "CacheManager_GetCacheKeysAction",
+        "responses": {
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cacheManager/fillAllCacheObjects": {
+      "post": {
+        "tags": [
+          "CacheManager"
+        ],
+        "operationId": "CacheManager_FillAllCacheObjectsAction",
+        "responses": {
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/contacts/createUpdateContact": {
+      "post": {
+        "tags": [
+          "Contacts"
+        ],
+        "operationId": "Contacts_CreateContact",
+        "requestBody": {
+          "x-name": "Payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOCreateUpdateContactPayload"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "guid"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/contacts/getContactByNationalId": {
+      "post": {
+        "tags": [
+          "Contacts"
+        ],
+        "operationId": "Contacts_GetContactByNationalId",
+        "requestBody": {
+          "x-name": "contactRequest",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactByNationalIdRequest"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOContact"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/contacts/getContactByMobileNumber": {
+      "post": {
+        "tags": [
+          "Contacts"
+        ],
+        "operationId": "Contacts_GetContactByNationalId2",
+        "requestBody": {
+          "x-name": "contactRequest",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactByMobileNumberRequest"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOContact"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/externalAPI/getCaseDetails": {
+      "post": {
+        "tags": [
+          "ExternalAPI"
+        ],
+        "operationId": "ExternalAPI_GetCaseDetailsFromExternalAPI",
+        "requestBody": {
+          "x-name": "Payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOCaseDetailsPayload"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOCaseDetailsResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/externalAPI/sendSMSOTP": {
+      "post": {
+        "tags": [
+          "ExternalAPI"
+        ],
+        "operationId": "ExternalAPI_SendSMSOTP",
+        "requestBody": {
+          "x-name": "Payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOSendOTPPayload"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOSendOTPResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Health/healthSendEmail": {
+      "post": {
+        "tags": [
+          "Health"
+        ],
+        "operationId": "Health_HealthSendEmail",
+        "requestBody": {
+          "x-name": "healthMailDto",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HealthMailDto"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Health/testAPI": {
+      "post": {
+        "tags": [
+          "Health"
+        ],
+        "operationId": "Health_TestAPI",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "file"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getAllApplications": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetAllApplications",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOApplicationResult"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getApplicationsByID": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetApplicationsByID",
+        "requestBody": {
+          "x-name": "ApplicationsByID",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOApplicationResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getMainCatergories": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetMainCatergories",
+        "requestBody": {
+          "x-name": "PayLoad",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOGetTicketMainCategoryPayLoad"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOTicketMainCategoryResults"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getCategories": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetCategories",
+        "requestBody": {
+          "x-name": "PayLoad",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOGetTicketCategoryPayLoad"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOTicketCategoryResults"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getCategoriesDetails": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetCategoriesDetails",
+        "requestBody": {
+          "x-name": "PayLoad",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOGetTicketCategoryDetailsPayLoad"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOTicketCategoryDetailsResults"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getServices": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetServices",
+        "requestBody": {
+          "x-name": "PayLoad",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOGetServicesPayLoad"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOServiceMOJResults"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getRegions": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetRegions",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTORegionResult"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getCities": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetCities",
+        "requestBody": {
+          "x-name": "Payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOGetCitiesPayload"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOCityResult"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getCourtTypes": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetCourtTypes",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOCourtTypeResult"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getBuildings": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetBuildings",
+        "requestBody": {
+          "x-name": "PayLoad",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOGetBuildingsPayLoad"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOBuildingResult"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getJudicialDepartments": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetJudicialDepartments",
+        "requestBody": {
+          "x-name": "PayLoad",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOGetJudicialDepartmentBuildingPayLoad"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOJudicialDepartmentBuildingResult"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getNationalities": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetNationalities",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTONationalityResult"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getOccupations": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetOccupations",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOOccupationResult"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getReligions": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetReligions",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOReligionResult"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getBeneficiaryGenderCodes": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetBeneficiaryGenderCodes",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOOptionSetLabel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getBeneficiaryFamilyStatusCodes": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetBeneficiaryFamilyStatusCodes",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOOptionSetLabel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getBeneficiaryPreferredLanguage": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetBeneficiaryPreferredLanguage",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOOptionSetLabel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getBeneficiaryIDType": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetBeneficiaryIDType",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOOptionSetLabel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getConfigurationByCode": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetConfigurationByCode",
+        "requestBody": {
+          "x-name": "Config",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOCRMSYSConfigurationPayLoad"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOCRMSYSConfigurationPayLoad"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getLawAndRegulation": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetLawAndRegulation",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOLawAndRegulationResults"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getBanks": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetBanks",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOBankResults"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getClosingReasons": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "getClosingReasons",
+        "requestBody": {
+          "x-name": "CloseReasonType",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClosingReasonsPayload"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOClosingReasonsResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lookups/getAllDistributionRoles": {
+      "post": {
+        "tags": [
+          "Lookups"
+        ],
+        "operationId": "Lookups_GetAllDistributionRoles",
+        "requestBody": {
+          "x-name": "PayLoad",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOGetTicketMainCategoryPayLoad"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOTicketMainCategoryResults"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/qaim/createQaimFeedback": {
+      "post": {
+        "tags": [
+          "Qaim"
+        ],
+        "operationId": "Qaim_CreateQaimFeedback",
+        "requestBody": {
+          "x-name": "Payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DTOCreateQaimFeedbackPayload"
+                }
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOTickeDTOCreateQaimFeedbackResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tickets/createUpdateTicket": {
+      "post": {
+        "tags": [
+          "Tickets"
+        ],
+        "operationId": "Tickets_CreateUpdateTicket",
+        "requestBody": {
+          "x-name": "Payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOCreateTicketPayload"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "guid"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tickets/createTicketFromWebOrMobile": {
+      "post": {
+        "tags": [
+          "Tickets"
+        ],
+        "operationId": "Tickets_CreateTicketFromWebOrMobile",
+        "requestBody": {
+          "x-name": "Payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOCreateTickeFromWebOrMobiletPayload"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOCreateTicketResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tickets/createQaimTicket": {
+      "post": {
+        "tags": [
+          "Tickets"
+        ],
+        "operationId": "Tickets_CreateQaimTicket",
+        "requestBody": {
+          "x-name": "Payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BadFeedbackPayload"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOCreateTicketResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tickets/checkTicketIsExist": {
+      "post": {
+        "tags": [
+          "Tickets"
+        ],
+        "operationId": "Tickets_CheckTicketIsExist",
+        "requestBody": {
+          "x-name": "Ticket",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOTicket"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tickets/getTicketsByNationalId": {
+      "post": {
+        "tags": [
+          "Tickets"
+        ],
+        "operationId": "Tickets_GetTicketsByNationalId",
+        "requestBody": {
+          "x-name": "Payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOTicketNationalID"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DTOTicketHeaderResults"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tickets/getTicketDetailsByTicketId": {
+      "post": {
+        "tags": [
+          "Tickets"
+        ],
+        "operationId": "Tickets_GetTicketDetailsByTicketId",
+        "requestBody": {
+          "x-name": "Ticket",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOTicketDetailsID"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOTicketDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tickets/changeTicketStatus": {
+      "post": {
+        "tags": [
+          "Tickets"
+        ],
+        "operationId": "Tickets_ChangetTicketStatus",
+        "requestBody": {
+          "x-name": "Payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOTicketStatusDetailsByTicketId"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOChangeTicketStatusResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tickets/createTicketAuditResult": {
+      "post": {
+        "tags": [
+          "Tickets"
+        ],
+        "operationId": "Tickets_CreateTicketAuditResult",
+        "requestBody": {
+          "x-name": "Payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketAuditResultPayload"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "guid"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tickets/getCSJTicketDetailsByTicketId": {
+      "post": {
+        "tags": [
+          "Tickets"
+        ],
+        "operationId": "Tickets_GetSCJTicketDetailsByOnlyTicketId",
+        "requestBody": {
+          "x-name": "Ticket",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOTicketDetailsOnlyTicketIDPayload"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOTicketDetailsByOnlyTicketId"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tickets/getTicketsDetailsByID": {
+      "post": {
+        "tags": [
+          "Tickets"
+        ],
+        "operationId": "Tickets_UpdateTicketsDetailsByID",
+        "requestBody": {
+          "x-name": "Payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOTickeDto"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOTickeDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tickets/UpdateTicketsViolation": {
+      "post": {
+        "tags": [
+          "Tickets"
+        ],
+        "operationId": "Tickets_UpdateTicketsViolation",
+        "requestBody": {
+          "x-name": "Payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTOTickeViolationDto"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DTOTickeViolationDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getGenesysActivitiesByMobileNumberAndEmail": {
+      "post": {
+        "tags": [
+          "Genesys"
+        ],
+        "operationId": "Genesys_GetGenesysActivitiesByMobileNumberAndEmail",
+        "requestBody": {
+          "x-name": "PayLoad",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenesysActivitiesPayload"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GenesysActivitiesResult"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getGenesysQualityActivitiesByDate": {
+      "post": {
+        "tags": [
+          "Genesys"
+        ],
+        "operationId": "Genesys_GetGenesysQualityActivitiesByDate",
+        "requestBody": {
+          "x-name": "PayLoad",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenesysQualityPayload"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GenesysQualityResult"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/insertGenesysTicketOutboundCall": {
+      "post": {
+        "tags": [
+          "Genesys"
+        ],
+        "operationId": "Genesys_InsertGenesysTicketOutboundCall",
+        "requestBody": {
+          "x-name": "PayLoad",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenesysTicketOutBoundCallPayload"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/GetRecordingFile": {
+      "get": {
+        "tags": [
+          "Genesys"
+        ],
+        "operationId": "Genesys_GetRecordingFile",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "RecordingId",
+            "in": "query",
+            "required": true,
+            "x-position": 1,
+            "nullable": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Communications/SendSMS": {
+      "post": {
+        "tags": [
+          "Communications"
+        ],
+        "operationId": "Communications_SendSMS",
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SMSRequestInfo"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIResponseInfoOfString"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/NICPersonalInformation/GetPersonalInformation": {
+      "post": {
+        "tags": [
+          "NICPersonalInformation"
+        ],
+        "operationId": "NICPersonalInformation_GetPersonalInformation",
+        "requestBody": {
+          "x-name": "PersonalInfo",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestModel"
+              }
+            }
+          },
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CRMBeneficiary"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DTOCreateNoteAttachmenResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "NoteId",
+          "IsCreated"
+        ],
+        "properties": {
+          "NoteId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "IsCreated": {
+            "type": "boolean"
+          },
+          "ErrorMessage": {
+            "type": "string"
+          },
+          "ErrorCode": {
+            "type": "string"
+          }
+        }
+      },
+      "ApiException": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Exception"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "StatusCode"
+            ],
+            "properties": {
+              "StatusCode": {
+                "$ref": "#/components/schemas/HttpStatusCode"
+              },
+              "Errors": {
+                "$ref": "#/components/schemas/ValidationErrorCollection"
+              }
+            }
+          }
+        ]
+      },
+      "HttpStatusCode": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "Continue",
+          "SwitchingProtocols",
+          "OK",
+          "Created",
+          "Accepted",
+          "NonAuthoritativeInformation",
+          "NoContent",
+          "ResetContent",
+          "PartialContent",
+          "MultipleChoices",
+          "Ambiguous",
+          "MovedPermanently",
+          "Moved",
+          "Found",
+          "Redirect",
+          "SeeOther",
+          "RedirectMethod",
+          "NotModified",
+          "UseProxy",
+          "Unused",
+          "TemporaryRedirect",
+          "RedirectKeepVerb",
+          "BadRequest",
+          "Unauthorized",
+          "PaymentRequired",
+          "Forbidden",
+          "NotFound",
+          "MethodNotAllowed",
+          "NotAcceptable",
+          "ProxyAuthenticationRequired",
+          "RequestTimeout",
+          "Conflict",
+          "Gone",
+          "LengthRequired",
+          "PreconditionFailed",
+          "RequestEntityTooLarge",
+          "RequestUriTooLong",
+          "UnsupportedMediaType",
+          "RequestedRangeNotSatisfiable",
+          "ExpectationFailed",
+          "UpgradeRequired",
+          "InternalServerError",
+          "NotImplemented",
+          "BadGateway",
+          "ServiceUnavailable",
+          "GatewayTimeout",
+          "HttpVersionNotSupported"
+        ],
+        "enum": [
+          100,
+          101,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          300,
+          300,
+          301,
+          301,
+          302,
+          302,
+          303,
+          303,
+          304,
+          305,
+          306,
+          307,
+          307,
+          400,
+          401,
+          402,
+          403,
+          404,
+          405,
+          406,
+          407,
+          408,
+          409,
+          410,
+          411,
+          412,
+          413,
+          414,
+          415,
+          416,
+          417,
+          426,
+          500,
+          501,
+          502,
+          503,
+          504,
+          505
+        ]
+      },
+      "ValidationErrorCollection": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "HasErrors",
+              "HasWarnings"
+            ],
+            "properties": {
+              "HasErrors": {
+                "type": "boolean"
+              },
+              "HasWarnings": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
+      "ValidationError": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "IsWarning",
+          "ErrorNumber"
+        ],
+        "properties": {
+          "PropertyName": {
+            "type": "string"
+          },
+          "ErrorText": {
+            "type": "string"
+          },
+          "IsWarning": {
+            "type": "boolean"
+          },
+          "ErrorNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "UserData": {
+            "$ref": "#/components/schemas/IDictionary"
+          }
+        }
+      },
+      "IDictionary": {
+        "type": "object",
+        "x-abstract": true,
+        "additionalProperties": false,
+        "required": [
+          "IsReadOnly",
+          "IsFixedSize"
+        ],
+        "properties": {
+          "Item": {
+            "additionalProperties": false
+          },
+          "Keys": {
+            "type": "array",
+            "items": {}
+          },
+          "Values": {
+            "type": "array",
+            "items": {}
+          },
+          "IsReadOnly": {
+            "type": "boolean"
+          },
+          "IsFixedSize": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Exception": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "Message": {
+            "type": "string"
+          },
+          "InnerException": {
+            "$ref": "#/components/schemas/Exception"
+          },
+          "StackTrace": {
+            "type": "string"
+          },
+          "Source": {
+            "type": "string"
+          }
+        }
+      },
+      "DTONote": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "hasAttachmenst",
+          "objectId",
+          "createdDate"
+        ],
+        "properties": {
+          "entityName": {
+            "type": "string"
+          },
+          "applicationCode": {
+            "type": "string"
+          },
+          "fileSize_Bytes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fileName": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "attachmentBase64": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "hasAttachmenst": {
+            "type": "boolean"
+          },
+          "objectId": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "noteId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "noteSource": {
+            "$ref": "#/components/schemas/NoteOrigin"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NoteOrigin": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "FromCRMUser",
+          "FromBeneficiary",
+          "ClosingNote",
+          "SCJBeneficiary"
+        ],
+        "enum": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "DTOGetObjectNotesResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "dataSize"
+        ],
+        "properties": {
+          "dataSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTONote"
+            }
+          },
+          "ErrorCode": {
+            "type": "string"
+          },
+          "ErrorMessage": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOGetObjectNotesPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "objectId",
+          "getAll"
+        ],
+        "properties": {
+          "applicationCode": {
+            "type": "string"
+          },
+          "objectId": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "getAll": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "DTOPrivatNotesResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOPrivatAttachmentNotesResult"
+            }
+          },
+          "ErrorCode": {
+            "type": "string"
+          },
+          "ErrorMessage": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOPrivatAttachmentNotesResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "Createdon",
+          "ObjectId",
+          "TicketId"
+        ],
+        "properties": {
+          "Description": {
+            "type": "string"
+          },
+          "Attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTONote"
+            }
+          },
+          "Createdon": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Scjuserreatedby": {
+            "type": "string"
+          },
+          "ObjectId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "TicketId": {
+            "type": "string",
+            "format": "guid"
+          }
+        }
+      },
+      "DTOPrivateObjectNotesPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "TicketId": {
+            "type": "string",
+            "format": "guid"
+          }
+        }
+      },
+      "DTONoteAttachmentPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "NoteId"
+        ],
+        "properties": {
+          "NoteId": {
+            "type": "string",
+            "format": "guid"
+          }
+        }
+      },
+      "DTOCreateUpdateContactPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "NationalId",
+          "FirstName",
+          "SecondName",
+          "LastName"
+        ],
+        "properties": {
+          "ContactId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "Source": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "NiType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "NationalId": {
+            "type": "string",
+            "maxLength": 11,
+            "minLength": 10
+          },
+          "FirstName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "SecondName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "LastName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "MobilePhone": {
+            "type": "string",
+            "pattern": "^[0-9]{8,16}$"
+          },
+          "BirthDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "GenderCode": {
+            "type": "integer",
+            "format": "int32",
+            "maximum": 2.0,
+            "minimum": 1.0
+          },
+          "EmailAddress": {
+            "type": "string",
+            "format": "email"
+          },
+          "OccupationID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "CityID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "PreferredLanguage": {
+            "type": "integer",
+            "format": "int32",
+            "maximum": 2.0,
+            "minimum": 1.0
+          },
+          "NationalityID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ReligionID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "RegionID": {
+            "type": "string",
+            "format": "guid"
+          }
+        }
+      },
+      "DTOContact": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "FullName": {
+            "type": "string"
+          },
+          "MobileNumber": {
+            "type": "string"
+          },
+          "Email": {
+            "type": "string"
+          },
+          "NationalityId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "NationalityName": {
+            "type": "string"
+          },
+          "CityId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "CityName": {
+            "type": "string"
+          },
+          "RegionId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "RegionName": {
+            "type": "string"
+          },
+          "Gender": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "IDType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "IDNumber": {
+            "type": "string"
+          },
+          "BirthDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ContactByNationalIdRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "NID"
+        ],
+        "properties": {
+          "NID": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "ContactByMobileNumberRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "MobileNumber"
+        ],
+        "properties": {
+          "MobileNumber": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "DTOCaseDetailsResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "caseCode": {
+            "type": "string"
+          },
+          "courtTypeId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "cityId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "jdbId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "jdbName": {
+            "type": "string"
+          },
+          "CaseStatus": {
+            "type": "string"
+          },
+          "courtTypeName": {
+            "type": "string"
+          },
+          "cityName": {
+            "type": "string"
+          },
+          "caseDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastSessionDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "nextSessionDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "hasJudgment": {
+            "type": "boolean"
+          },
+          "isExist": {
+            "type": "boolean"
+          },
+          "ErrorMessage": {
+            "type": "string"
+          },
+          "ErrorCode": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOCaseDetailsPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "caseCode": {
+            "type": "string"
+          },
+          "socialId": {
+            "type": "string"
+          },
+          "judicialApplicationCode": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOSendOTPResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "smsCode": {
+            "type": "string"
+          },
+          "ErrorMessage": {
+            "type": "string"
+          },
+          "ErrorCode": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOSendOTPPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "socialId": {
+            "type": "string"
+          }
+        }
+      },
+      "HealthMailDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "Error": {
+            "type": "string"
+          },
+          "Source": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOApplicationResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ArabicName": {
+            "type": "string"
+          },
+          "EnglishName": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOTicketMainCategoryResults": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "MainCategoryResults": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOTicketMainCategoryResult"
+            }
+          },
+          "ErrorCode": {
+            "type": "string"
+          },
+          "ErrorMessage": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOTicketMainCategoryResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ArabicName": {
+            "type": "string"
+          },
+          "EnglishName": {
+            "type": "string"
+          },
+          "KBIntegrationCode": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOGetTicketMainCategoryPayLoad": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "TicketType"
+        ],
+        "properties": {
+          "TicketType": {
+            "type": "integer",
+            "format": "int32",
+            "maximum": 2.0,
+            "minimum": 1.0
+          },
+          "ApplicationCode": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOTicketCategoryResults": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "CategoryResult": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOTicketCategoryResult"
+            }
+          },
+          "ErrorCode": {
+            "type": "string"
+          },
+          "ErrorMessage": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOTicketCategoryResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ArabicName": {
+            "type": "string"
+          },
+          "EnglishName": {
+            "type": "string"
+          },
+          "JudicialApplicationCode": {
+            "type": "string"
+          },
+          "KBIntegrationCode": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOGetTicketCategoryPayLoad": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "TicketType",
+          "MainCategoryID"
+        ],
+        "properties": {
+          "TicketType": {
+            "type": "integer",
+            "format": "int32",
+            "maximum": 2.0,
+            "minimum": 1.0
+          },
+          "MainCategoryID": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "ApplicationCode": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOTicketCategoryDetailsResults": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "CategoryDetailsResult": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOTicketCategoryDetailsResult"
+            }
+          },
+          "ErrorCode": {
+            "type": "string"
+          },
+          "ErrorMessage": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOTicketCategoryDetailsResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "IsRelatedToLegalCase",
+          "IsRelatedToService",
+          "IsRelatedToErrorNumber",
+          "IsRelatedToLandProofDate",
+          "IsRelatedToLandProofNumber",
+          "IsRelatedToRequestNumber",
+          "IsRelatedToTanfeethNumber",
+          "IsRelatedToTicketProvider",
+          "IsRelatedToAppealLegalCaseNumber",
+          "IsRelatedToNotaryNumber"
+        ],
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ArabicName": {
+            "type": "string"
+          },
+          "EnglishName": {
+            "type": "string"
+          },
+          "KBIntegrationCode": {
+            "type": "string"
+          },
+          "IsRelatedToLegalCase": {
+            "type": "boolean"
+          },
+          "IsRelatedToService": {
+            "type": "boolean"
+          },
+          "IsRelatedToErrorNumber": {
+            "type": "boolean"
+          },
+          "IsRelatedToLandProofDate": {
+            "type": "boolean"
+          },
+          "IsRelatedToLandProofNumber": {
+            "type": "boolean"
+          },
+          "IsRelatedToRequestNumber": {
+            "type": "boolean"
+          },
+          "IsRelatedToTanfeethNumber": {
+            "type": "boolean"
+          },
+          "IsRelatedToTicketProvider": {
+            "type": "boolean"
+          },
+          "IsRelatedToAppealLegalCaseNumber": {
+            "type": "boolean"
+          },
+          "IsRelatedToNotaryNumber": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DTOGetTicketCategoryDetailsPayLoad": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "TicketType",
+          "MainCategoryID",
+          "CategoryID"
+        ],
+        "properties": {
+          "TicketType": {
+            "type": "integer",
+            "format": "int32",
+            "maximum": 2.0,
+            "minimum": 1.0
+          },
+          "MainCategoryID": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "CategoryID": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "ApplicationCode": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOServiceMOJResults": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ServiceMOJResult": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOServiceMOJResult"
+            }
+          },
+          "ErrorCode": {
+            "type": "string"
+          },
+          "ErrorMessage": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOServiceMOJResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ArabicName": {
+            "type": "string"
+          },
+          "EnglishName": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOGetServicesPayLoad": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "TicketType",
+          "MainCategoryID",
+          "CategoryID",
+          "CategoryDetailID"
+        ],
+        "properties": {
+          "TicketType": {
+            "type": "integer",
+            "format": "int32",
+            "maximum": 2.0,
+            "minimum": 1.0
+          },
+          "MainCategoryID": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "CategoryID": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "CategoryDetailID": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "ApplicationCode": {
+            "type": "string"
+          }
+        }
+      },
+      "DTORegionResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ArabicName": {
+            "type": "string"
+          },
+          "EnglishName": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOCityResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ArabicName": {
+            "type": "string"
+          },
+          "EnglishName": {
+            "type": "string"
+          },
+          "RegionID": {
+            "type": "string",
+            "format": "guid"
+          }
+        }
+      },
+      "DTOGetCitiesPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "RegionID": {
+            "type": "string",
+            "format": "guid"
+          }
+        }
+      },
+      "DTOCourtTypeResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ArabicName": {
+            "type": "string"
+          },
+          "EnglishName": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOBuildingResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ArabicName": {
+            "type": "string"
+          },
+          "EnglishName": {
+            "type": "string"
+          },
+          "GoogleLink": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOGetBuildingsPayLoad": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "CourtTypeID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "CityID": {
+            "type": "string",
+            "format": "guid"
+          }
+        }
+      },
+      "DTOJudicialDepartmentBuildingResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ArabicName": {
+            "type": "string"
+          },
+          "EnglishName": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOGetJudicialDepartmentBuildingPayLoad": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "CourtTypeID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "CityID": {
+            "type": "string",
+            "format": "guid"
+          }
+        }
+      },
+      "DTONationalityResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ArabicName": {
+            "type": "string"
+          },
+          "EnglishName": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOOccupationResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ArabicName": {
+            "type": "string"
+          },
+          "EnglishName": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOReligionResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ArabicName": {
+            "type": "string"
+          },
+          "EnglishName": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOOptionSetLabel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "Value": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Label": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOCRMSYSConfigurationPayLoad": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "Code": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOLawAndRegulationResults": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "LawAndRegulationResults": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOLawAndRegulationResult"
+            }
+          },
+          "ErrorCode": {
+            "type": "string"
+          },
+          "ErrorMessage": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOLawAndRegulationResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ArabicName": {
+            "type": "string"
+          },
+          "EnglishName": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOBankResults": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "BankResults": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOBankResult"
+            }
+          },
+          "ErrorCode": {
+            "type": "string"
+          },
+          "ErrorMessage": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOBankResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ArabicName": {
+            "type": "string"
+          },
+          "EnglishName": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOClosingReasonsResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "closeReasonId",
+          "closeReasonName",
+          "isResolve",
+          "isCancel"
+        ],
+        "properties": {
+          "closeReasonId": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "closeReasonName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "isResolve": {
+            "type": "boolean"
+          },
+          "isCancel": {
+            "type": "boolean"
+          },
+          "scjIntegrationKey": {
+            "type": "string"
+          }
+        }
+      },
+      "ClosingReasonsPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "closeReasonType"
+        ],
+        "properties": {
+          "closeReasonType": {
+            "type": "integer",
+            "format": "int32",
+            "maximum": 2.0,
+            "minimum": 0.0
+          }
+        }
+      },
+      "DTOTickeDTOCreateQaimFeedbackResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "Result": {
+            "type": "boolean"
+          },
+          "ErrorCode": {
+            "type": "string"
+          },
+          "ErrorMessage": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOCreateQaimFeedbackPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "SurveyDate"
+        ],
+        "properties": {
+          "CustomerNationalNumber": {
+            "type": "string"
+          },
+          "Fullname": {
+            "type": "string"
+          },
+          "MobileNumber": {
+            "type": "string"
+          },
+          "BirthDate": {
+            "type": "string"
+          },
+          "QaimURL": {
+            "type": "string"
+          },
+          "SurveyDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ResponseId": {
+            "type": "string"
+          },
+          "Purpose": {
+            "$ref": "#/components/schemas/Purpose"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "ServiceName": {
+            "type": "string"
+          }
+        }
+      },
+      "Purpose": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "MissingReplay",
+          "BadFeedback"
+        ],
+        "enum": [
+          1,
+          2
+        ]
+      },
+      "DTOCreateTicketPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "MainCategory",
+          "Category",
+          "CategoryDetails",
+          "Amount"
+        ],
+        "properties": {
+          "CreatedBy": {
+            "type": "string"
+          },
+          "TicketSource": {
+            "$ref": "#/components/schemas/TicketOrigin"
+          },
+          "TicketId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ApplicationCode": {
+            "type": "string"
+          },
+          "Tickettype": {
+            "type": "integer",
+            "format": "int32",
+            "maximum": 2.0,
+            "minimum": 1.0
+          },
+          "MainCategory": {
+            "type": "string",
+            "format": "guid"
+          },
+          "Category": {
+            "type": "string",
+            "format": "guid"
+          },
+          "CategoryDetails": {
+            "type": "string",
+            "format": "guid"
+          },
+          "LegalCaseNumber": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "ErrorNumber": {
+            "type": "string"
+          },
+          "LandProofDate": {
+            "type": "string"
+          },
+          "LandProofNumber": {
+            "type": "string"
+          },
+          "RequestNumber": {
+            "type": "string"
+          },
+          "TanfeethNumber": {
+            "type": "string"
+          },
+          "TicketProvider": {
+            "$ref": "#/components/schemas/TicketProviders"
+          },
+          "AppealLegalCaseNumber": {
+            "type": "string"
+          },
+          "NotaryNumber": {
+            "type": "string"
+          },
+          "Bank": {
+            "type": "string",
+            "format": "guid"
+          },
+          "IBAN": {
+            "type": "string"
+          },
+          "Amount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "RequestForTransferringReservedAmount": {
+            "type": "boolean"
+          },
+          "LandProofCity": {
+            "type": "string",
+            "format": "guid"
+          },
+          "FromDepartment": {
+            "type": "boolean"
+          },
+          "Contact": {
+            "$ref": "#/components/schemas/DTOCreateUpdateContactPayload"
+          },
+          "AttachmentsFiles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTONotePayLoad"
+            }
+          }
+        }
+      },
+      "TicketOrigin": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "Phone",
+          "Email",
+          "Web",
+          "LiveChat",
+          "WhatsApp",
+          "MobileApp",
+          "NajizPortal",
+          "InternalStaff",
+          "OPRtoOPR",
+          "MOR",
+          "TeamLeader",
+          "CXAgent",
+          "CXSupervisor",
+          "JCCSupervisor",
+          "Qayim",
+          "OPSAgent",
+          "OPSSupervisor",
+          "CourtPortal",
+          "SCJSystem",
+          "KB",
+          "Facebook",
+          "Twitter"
+        ],
+        "enum": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          99,
+          1001,
+          1002,
+          2483,
+          3986
+        ]
+      },
+      "TicketProviders": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "Beneficiary",
+          "InternalAgent",
+          "Custodian",
+          "CompanyOwner",
+          "ExternalAgent"
+        ],
+        "enum": [
+          1,
+          2,
+          3,
+          7,
+          8
+        ]
+      },
+      "DTONotePayLoad": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "subject": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "fileName": {
+            "type": "string"
+          },
+          "attachmentBase64": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOCreateTicketResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ID"
+        ],
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "TicketNumber": {
+            "type": "string"
+          },
+          "ErrorMessage": {
+            "type": "string"
+          },
+          "ErrorCode": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOCreateTickeFromWebOrMobiletPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ApplicationCode",
+          "MainCategory",
+          "Category",
+          "CategoryDetails",
+          "Description",
+          "Amount",
+          "IsFromRabbitMQ"
+        ],
+        "properties": {
+          "ApplicationCode": {
+            "type": "string",
+            "minLength": 1
+          },
+          "MainCategory": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "Category": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "CategoryDetails": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "Service": {
+            "type": "string",
+            "format": "guid"
+          },
+          "LandProofCity": {
+            "type": "string",
+            "format": "guid"
+          },
+          "LegalCaseNumber": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "ErrorNumber": {
+            "type": "string"
+          },
+          "LandProofDate": {
+            "type": "string"
+          },
+          "LandProofNumber": {
+            "type": "string"
+          },
+          "RequestNumber": {
+            "type": "string"
+          },
+          "TanfeethNumber": {
+            "type": "string"
+          },
+          "TicketProvider": {
+            "$ref": "#/components/schemas/TicketProviders"
+          },
+          "AppealLegalCaseNumber": {
+            "type": "string"
+          },
+          "NotaryNumber": {
+            "type": "string"
+          },
+          "Bank": {
+            "type": "string",
+            "format": "guid"
+          },
+          "IBAN": {
+            "type": "string"
+          },
+          "Amount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "RequestForTransferringReservedAmount": {
+            "type": "boolean"
+          },
+          "FromDepartment": {
+            "type": "boolean"
+          },
+          "AttachmentsFiles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTONotePayLoad"
+            }
+          },
+          "TicketSource": {
+            "$ref": "#/components/schemas/TicketOrigin"
+          },
+          "Contact": {
+            "$ref": "#/components/schemas/DTOCreateUpdateContactPayload"
+          },
+          "IsFromRabbitMQ": {
+            "type": "boolean"
+          }
+        }
+      },
+      "BadFeedbackPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ReferenceNumber",
+          "ServiceProviderName",
+          "ServiceProvidersid",
+          "SystemProviderName",
+          "ResponseCreateDate",
+          "ResponseId",
+          "IsRelatedtoCRMCase",
+          "Source"
+        ],
+        "properties": {
+          "MobileNumber": {
+            "type": "string"
+          },
+          "NationalityNumber": {
+            "type": "string"
+          },
+          "ReferenceNumber": {
+            "type": "string",
+            "minLength": 1
+          },
+          "FullName": {
+            "type": "string"
+          },
+          "ServiceProviderName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "ServiceProvidersid": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "SystemProviderName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "ResponseCreateDate": {
+            "type": "string",
+            "format": "date-time",
+            "minLength": 1
+          },
+          "ResponseId": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "IsRelatedtoCRMCase": {
+            "type": "boolean"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Source": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "DTOTicket": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "MainCategory": {
+            "type": "string"
+          },
+          "Category": {
+            "type": "string"
+          },
+          "CategoryDetails": {
+            "type": "string"
+          },
+          "LegalCaseNumber": {
+            "type": "string"
+          },
+          "LandProofNumber": {
+            "type": "string"
+          },
+          "AppealLegalCaseNumber": {
+            "type": "string"
+          },
+          "TanfeethNumber": {
+            "type": "string"
+          },
+          "Service": {
+            "type": "string"
+          },
+          "NationalId": {
+            "type": "string"
+          },
+          "CustomerID": {
+            "type": "string"
+          },
+          "TicketSource": {
+            "$ref": "#/components/schemas/TicketOrigin"
+          }
+        }
+      },
+      "DTOTicketHeaderResults": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "TicketHeaderResult": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOTicketHeader"
+            }
+          },
+          "ErrorCode": {
+            "type": "string"
+          },
+          "ErrorMessage": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOTicketHeader": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ID",
+          "StatusId",
+          "CreatedDate"
+        ],
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "TicketNumber": {
+            "type": "string"
+          },
+          "LegalCaseNumber": {
+            "type": "string"
+          },
+          "TicketType": {
+            "type": "string"
+          },
+          "MainCategoryAR": {
+            "type": "string"
+          },
+          "CategoryAR": {
+            "type": "string"
+          },
+          "CategoryDetailsAR": {
+            "type": "string"
+          },
+          "MainCategoryEN": {
+            "type": "string"
+          },
+          "CategoryEN": {
+            "type": "string"
+          },
+          "CategoryDetailsEN": {
+            "type": "string"
+          },
+          "ServiceAR": {
+            "type": "string"
+          },
+          "ServiceEN": {
+            "type": "string"
+          },
+          "ClosingNote": {
+            "type": "string"
+          },
+          "StatusAR": {
+            "type": "string"
+          },
+          "StatusEN": {
+            "type": "string"
+          },
+          "StatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "SolvingDescription": {
+            "type": "string"
+          },
+          "CreatedDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "DTOTicketNationalID": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "IDNumber"
+        ],
+        "properties": {
+          "IDNumber": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "DTOTicketDetails": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ID",
+          "MainCategoryId",
+          "CategoryId",
+          "CategoryDetailsId",
+          "CreatedDate",
+          "Amount",
+          "statecode",
+          "canReopen",
+          "canUpdate"
+        ],
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "TicketNumber": {
+            "type": "string"
+          },
+          "MobileNumber": {
+            "type": "string"
+          },
+          "LegalCaseNumber": {
+            "type": "string"
+          },
+          "TicketType": {
+            "type": "string"
+          },
+          "MainCategoryId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "MainCategoryAR": {
+            "type": "string"
+          },
+          "CategoryId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "CategoryAR": {
+            "type": "string"
+          },
+          "CategoryDetailsId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "CategoryDetailsAR": {
+            "type": "string"
+          },
+          "BankId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "LandProofCity": {
+            "type": "string",
+            "format": "guid"
+          },
+          "landProofRegion": {
+            "type": "string",
+            "format": "guid"
+          },
+          "BankName": {
+            "type": "string"
+          },
+          "MainCategoryEN": {
+            "type": "string"
+          },
+          "CategoryEN": {
+            "type": "string"
+          },
+          "CategoryDetailsEN": {
+            "type": "string"
+          },
+          "ServiceId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ServiceAR": {
+            "type": "string"
+          },
+          "ServiceEN": {
+            "type": "string"
+          },
+          "ClosingNote": {
+            "type": "string"
+          },
+          "StatusAR": {
+            "type": "string"
+          },
+          "StatusEN": {
+            "type": "string"
+          },
+          "LandProfCityId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "LandProfCityName": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "SolvingDescription": {
+            "type": "string"
+          },
+          "CreatedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ClosedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ErrorNumber": {
+            "type": "string"
+          },
+          "LandProofDate": {
+            "type": "string"
+          },
+          "LandProofNumber": {
+            "type": "string"
+          },
+          "RequestNumber": {
+            "type": "string"
+          },
+          "TanfeethNumber": {
+            "type": "string"
+          },
+          "TicketProvider": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AppealLegalCaseNumber": {
+            "type": "string"
+          },
+          "NotaryNumber": {
+            "type": "string"
+          },
+          "IBAN": {
+            "type": "string"
+          },
+          "Amount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "RequestForTransferringReservedAmount": {
+            "type": "boolean"
+          },
+          "FromDepartment": {
+            "type": "boolean"
+          },
+          "NumberOfTicketUpdateByBeneficiary": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CustomerNoteAndAttachmentDetails": {
+            "$ref": "#/components/schemas/DTOGetObjectNotesResult"
+          },
+          "ErrorCode": {
+            "type": "string"
+          },
+          "ErrorMessage": {
+            "type": "string"
+          },
+          "statecode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ticketStages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOTicketStage"
+            }
+          },
+          "canReopen": {
+            "type": "boolean"
+          },
+          "canUpdate": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DTOTicketStage": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stage",
+          "stageStatus"
+        ],
+        "properties": {
+          "stage": {
+            "$ref": "#/components/schemas/TicketStage"
+          },
+          "stageStatus": {
+            "$ref": "#/components/schemas/StageStatus"
+          }
+        }
+      },
+      "TicketStage": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "New",
+          "Review",
+          "ToOPR",
+          "ToJDB",
+          "InProgress",
+          "WaitingForReply",
+          "Resolved",
+          "Canclled"
+        ],
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "StageStatus": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "Passed",
+          "Active",
+          "Next"
+        ],
+        "enum": [
+          0,
+          1,
+          2
+        ]
+      },
+      "DTOTicketDetailsID": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "TicketID",
+          "NationalId"
+        ],
+        "properties": {
+          "TicketID": {
+            "type": "string",
+            "minLength": 1
+          },
+          "NationalId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "ApplicationCode": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOChangeTicketStatusResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "IsChanged": {
+            "type": "boolean"
+          },
+          "ErrorCode": {
+            "type": "string"
+          },
+          "ErrorMessage": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOTicketStatusDetailsByTicketId": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "TicketId",
+          "TicketIncidentStatus",
+          "Source",
+          "ClosingReasonId"
+        ],
+        "properties": {
+          "TicketId": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "TicketIncidentStatus": {
+            "maximum": 2.0,
+            "minimum": 0.0,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IncidentStatus"
+              }
+            ]
+          },
+          "Source": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ClosingNote": {
+            "type": "string"
+          },
+          "ClosingReasonId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ExternalUser": {
+            "type": "string"
+          }
+        }
+      },
+      "IncidentStatus": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "ReOpen",
+          "Close",
+          "Cancel"
+        ],
+        "enum": [
+          0,
+          1,
+          2
+        ]
+      },
+      "TicketAuditResultPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "TicketID"
+        ],
+        "properties": {
+          "TicketID": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "SCJUser": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "AttachmentsFiles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTONotePayLoad"
+            }
+          }
+        }
+      },
+      "DTOTicketDetailsByOnlyTicketId": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ID",
+          "MainCategoryId",
+          "CategoryId",
+          "CategoryDetailsId",
+          "CreatedDate",
+          "Amount",
+          "statecode",
+          "StatusCode"
+        ],
+        "properties": {
+          "ID": {
+            "type": "string",
+            "format": "guid"
+          },
+          "TicketNumber": {
+            "type": "string"
+          },
+          "LegalCaseNumber": {
+            "type": "string"
+          },
+          "TicketType": {
+            "type": "string"
+          },
+          "MainCategoryId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "MainCategoryAR": {
+            "type": "string"
+          },
+          "CategoryId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "CategoryAR": {
+            "type": "string"
+          },
+          "CategoryDetailsId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "CategoryDetailsAR": {
+            "type": "string"
+          },
+          "BankId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "LandProofCity": {
+            "type": "string",
+            "format": "guid"
+          },
+          "landProofRegion": {
+            "type": "string",
+            "format": "guid"
+          },
+          "BankName": {
+            "type": "string"
+          },
+          "MainCategoryEN": {
+            "type": "string"
+          },
+          "CategoryEN": {
+            "type": "string"
+          },
+          "CategoryDetailsEN": {
+            "type": "string"
+          },
+          "ServiceId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "ServiceAR": {
+            "type": "string"
+          },
+          "ServiceEN": {
+            "type": "string"
+          },
+          "ClosingNote": {
+            "type": "string"
+          },
+          "StatusAR": {
+            "type": "string"
+          },
+          "StatusEN": {
+            "type": "string"
+          },
+          "LandProfCityId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "LandProfCityName": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "SolvingDescription": {
+            "type": "string"
+          },
+          "CreatedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ClosedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ErrorNumber": {
+            "type": "string"
+          },
+          "LandProofDate": {
+            "type": "string"
+          },
+          "LandProofNumber": {
+            "type": "string"
+          },
+          "RequestNumber": {
+            "type": "string"
+          },
+          "TanfeethNumber": {
+            "type": "string"
+          },
+          "TicketProvider": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AppealLegalCaseNumber": {
+            "type": "string"
+          },
+          "NotaryNumber": {
+            "type": "string"
+          },
+          "IBAN": {
+            "type": "string"
+          },
+          "Amount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "RequestForTransferringReservedAmount": {
+            "type": "boolean"
+          },
+          "FromDepartment": {
+            "type": "boolean"
+          },
+          "NumberOfTicketUpdateByBeneficiary": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CustomerNoteAndAttachmentDetails": {
+            "$ref": "#/components/schemas/DTOGetObjectNotesResult"
+          },
+          "AuditResultId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "AuditResult": {
+            "$ref": "#/components/schemas/DTOGetObjectNotesResult"
+          },
+          "Violation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DTOGetObjectNotesResult"
+            }
+          },
+          "statecode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "StatusCode": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "DTOTicketDetailsOnlyTicketIDPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "TicketID"
+        ],
+        "properties": {
+          "TicketID": {
+            "type": "string",
+            "minLength": 1
+          },
+          "ApplicationCode": {
+            "type": "string"
+          }
+        }
+      },
+      "DTOTickeDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "TicketId"
+        ],
+        "properties": {
+          "TicketId": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          }
+        }
+      },
+      "DTOTickeViolationDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "TicketViolationId",
+          "Status"
+        ],
+        "properties": {
+          "TicketViolationId": {
+            "type": "string",
+            "format": "guid",
+            "minLength": 1
+          },
+          "Status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Notes": {
+            "type": "string"
+          }
+        }
+      },
+      "GenesysActivitiesResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "MainType": {
+            "type": "string"
+          },
+          "RemoteNumber": {
+            "type": "string"
+          },
+          "LocalUserId": {
+            "type": "string"
+          },
+          "InitiatedDateTimeGMT": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "CallDirection": {
+            "type": "string"
+          },
+          "AssignedWorkGroup": {
+            "type": "string"
+          },
+          "RemoteName": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          }
+        }
+      },
+      "GenesysActivitiesPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "From",
+          "To"
+        ],
+        "properties": {
+          "MobileNumber": {
+            "type": "string"
+          },
+          "Email": {
+            "type": "string"
+          },
+          "From": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "To": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "GenesysQualityResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "MainType",
+          "DisconnectDirection"
+        ],
+        "properties": {
+          "MainType": {
+            "$ref": "#/components/schemas/MediaType"
+          },
+          "RemoteNumber": {
+            "type": "string"
+          },
+          "UserId": {
+            "type": "string"
+          },
+          "CreateDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "CallDirection": {
+            "type": "string"
+          },
+          "RecordingId": {
+            "type": "string"
+          },
+          "InteractionId": {
+            "type": "string"
+          },
+          "EvaluationTemplateCode": {
+            "type": "string"
+          },
+          "Email": {
+            "type": "string"
+          },
+          "CallDuration": {
+            "type": "string"
+          },
+          "HoldDuration": {
+            "type": "string"
+          },
+          "DisconnectDirection": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "MediaType": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "Call",
+          "Chat",
+          "Email"
+        ],
+        "enum": [
+          0,
+          1,
+          5
+        ]
+      },
+      "GenesysQualityPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "From"
+        ],
+        "properties": {
+          "From": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "GenesysTicketOutBoundCallPayload": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "MobileNumber": {
+            "type": "string"
+          },
+          "TicketNumber": {
+            "type": "string"
+          }
+        }
+      },
+      "APIResponseInfoOfString": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "Code"
+        ],
+        "properties": {
+          "Code": {
+            "type": "integer"
+          },
+          "Message": {
+            "type": "string"
+          },
+          "Data": {
+            "type": "string"
+          }
+        }
+      },
+      "SMSRequestInfo": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "Numbers": {
+            "type": "string"
+          },
+          "Message": {
+            "type": "string"
+          }
+        }
+      },
+      "CRMBeneficiary": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "CRMSocialStatusId"
+        ],
+        "properties": {
+          "DateOfBirth": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "FamilyName": {
+            "type": "string"
+          },
+          "FatherName": {
+            "type": "string"
+          },
+          "FirstName": {
+            "type": "string"
+          },
+          "Gender": {
+            "type": "string"
+          },
+          "GrandFatherName": {
+            "type": "string"
+          },
+          "NationalID": {
+            "type": "string"
+          },
+          "NationalIdExpiryDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "OccupationCode": {
+            "type": "string"
+          },
+          "OccupationDescription": {
+            "type": "string"
+          },
+          "NationalityCode": {
+            "type": "string"
+          },
+          "NationalityDescription": {
+            "type": "string"
+          },
+          "ReligionCode": {
+            "type": "string"
+          },
+          "ReligionDescription": {
+            "type": "string"
+          },
+          "SocialStatus": {
+            "type": "string"
+          },
+          "Title": {
+            "additionalProperties": false
+          },
+          "Address1": {
+            "type": "string"
+          },
+          "Address2": {
+            "type": "string"
+          },
+          "City": {
+            "type": "string"
+          },
+          "CityId": {
+            "type": "string"
+          },
+          "CRMGenderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CRMSocialStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CRMCity": {
+            "$ref": "#/components/schemas/CRMRefrance"
+          },
+          "CRMReligion": {
+            "$ref": "#/components/schemas/CRMRefrance"
+          },
+          "CRMNationality": {
+            "$ref": "#/components/schemas/CRMRefrance"
+          }
+        }
+      },
+      "CRMRefrance": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "EntityName": {
+            "type": "string"
+          },
+          "EntityId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "EntityLabel": {
+            "type": "string"
+          }
+        }
+      },
+      "RequestModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "SocialID",
+          "CRMAPIKey",
+          "Year",
+          "Month",
+          "Day"
+        ],
+        "properties": {
+          "SocialID": {
+            "type": "string",
+            "minLength": 1
+          },
+          "CRMAPIKey": {
+            "type": "string",
+            "minLength": 1
+          },
+          "Year": {
+            "type": "integer",
+            "format": "int32",
+            "maximum": 2999.0,
+            "minimum": 1850.0
+          },
+          "Month": {
+            "type": "integer",
+            "format": "int32",
+            "maximum": 12.0,
+            "minimum": 1.0
+          },
+          "Day": {
+            "type": "integer",
+            "format": "int32",
+            "maximum": 31.0,
+            "minimum": 1.0
+          },
+          "BirthDate": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
